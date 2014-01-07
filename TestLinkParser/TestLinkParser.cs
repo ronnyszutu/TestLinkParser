@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace TestLinkParser
 {
@@ -26,9 +27,18 @@ namespace TestLinkParser
             xmlfDialog.CheckFileExists = true;
             xmlfDialog.CheckPathExists = true;
 
+            //if (xmlfDialog.ShowDialog() == DialogResult.OK)
+            //{
+            //    MessageBox.Show(xmlfDialog.FileName.ToString());
+            //}
+
             if (xmlfDialog.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show(xmlfDialog.FileName.ToString());
+                XmlDocument doc = new XmlDocument();
+                doc.Load(xmlfDialog.FileName);
+                XmlNode first = doc.FirstChild;
+
+                MessageBox.Show(first.OuterXml);
             }
         }
     }
