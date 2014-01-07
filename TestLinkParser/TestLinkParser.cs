@@ -15,5 +15,18 @@ namespace TestLinkParser
         {
             InitializeComponent();
         }
+
+        private void btnOpenXML_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog xmlfDialog = new OpenFileDialog();
+            xmlfDialog.Title = "Open XML File";
+            xmlfDialog.Filter = "XML Files|*.xml";
+            xmlfDialog.InitialDirectory = @"C:\";
+
+            if (xmlfDialog.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show(xmlfDialog.FileName.ToString());
+            }
+        }
     }
 }

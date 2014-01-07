@@ -1,0 +1,9 @@
+c:\users\ronny\documents\visual studio 2010\Projects\TestLinkParser\TestLinkParser\bin\Debug\TestLinkParser.exe
+c:\users\ronny\documents\visual studio 2010\Projects\TestLinkParser\TestLinkParser\bin\Debug\TestLinkParser.pdb
+c:\users\ronny\documents\visual studio 2010\Projects\TestLinkParser\TestLinkParser\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\ronny\documents\visual studio 2010\Projects\TestLinkParser\TestLinkParser\obj\x86\Debug\TestLinkParser.frmTestLinkParser.resources
+c:\users\ronny\documents\visual studio 2010\Projects\TestLinkParser\TestLinkParser\obj\x86\Debug\TestLinkParser.Properties.Resources.resources
+c:\users\ronny\documents\visual studio 2010\Projects\TestLinkParser\TestLinkParser\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\ronny\documents\visual studio 2010\Projects\TestLinkParser\TestLinkParser\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\ronny\documents\visual studio 2010\Projects\TestLinkParser\TestLinkParser\obj\x86\Debug\TestLinkParser.exe
+c:\users\ronny\documents\visual studio 2010\Projects\TestLinkParser\TestLinkParser\obj\x86\Debug\TestLinkParser.pdb
