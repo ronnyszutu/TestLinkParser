@@ -36,9 +36,17 @@ namespace TestLinkParser
             {
                 XmlDocument doc = new XmlDocument();
                 doc.Load(xmlfDialog.FileName);
-                XmlNode first = doc.FirstChild;
+                //XmlNode first = doc.FirstChild;
 
-                MessageBox.Show(first.OuterXml);
+                //MessageBox.Show(first.OuterXml);
+                XmlNodeList nodeList;
+                XmlNode root = doc.DocumentElement;
+                nodeList = root.SelectNodes("descendant::testcase");
+
+                foreach (XmlNode testcase in nodeList)
+                {
+                    MessageBox.Show(testcase.InnerText);
+                }
             }
         }
     }
