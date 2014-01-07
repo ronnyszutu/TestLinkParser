@@ -43,9 +43,15 @@ namespace TestLinkParser
                 XmlNode root = doc.DocumentElement;
                 nodeList = root.SelectNodes("descendant::testcase");
 
+                XmlNode node;
+
                 foreach (XmlNode testcase in nodeList)
                 {
-                    MessageBox.Show(testcase.InnerText);
+                    //MessageBox.Show(testcase.FirstChild.InnerXml);
+                    node = testcase.SelectSingleNode("//node_order");
+                    MessageBox.Show(node.InnerXml);
+                    node = testcase.SelectSingleNode("//externalid");
+                    MessageBox.Show(node.InnerXml);
                 }
             }
         }
