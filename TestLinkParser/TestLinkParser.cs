@@ -22,6 +22,9 @@ namespace TestLinkParser
             xmlfDialog.Title = "Open XML File";
             xmlfDialog.Filter = "XML Files|*.xml";
             xmlfDialog.InitialDirectory = @"C:\";
+            xmlfDialog.AddExtension = true;
+            xmlfDialog.CheckFileExists = true;
+            xmlfDialog.CheckPathExists = true;
 
             if (xmlfDialog.ShowDialog() == DialogResult.OK)
             {
