@@ -8,6 +8,7 @@ namespace TestLinkParser
 {
     class Keyword
     {
-        XmlNode notes;
+        public XmlNode notes;
+        public string name;
     }
 }

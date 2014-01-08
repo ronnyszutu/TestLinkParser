@@ -43,15 +43,66 @@ namespace TestLinkParser
                 XmlNode root = doc.DocumentElement;
                 nodeList = root.SelectNodes("descendant::testcase");
 
-                XmlNode node;
+                //XmlNode node;
+                List<Testcase> testcases = new List<Testcase>();
 
-                foreach (XmlNode testcase in nodeList)
+                foreach (XmlNode testcaseNode in nodeList)
                 {
-                    //MessageBox.Show(testcase.FirstChild.InnerXml);
-                    node = testcase.SelectSingleNode("//node_order");
-                    MessageBox.Show(node.InnerXml);
-                    node = testcase.SelectSingleNode("//externalid");
-                    MessageBox.Show(node.InnerXml);
+                    //MessageBox.Show(testcaseNode.FirstChild.InnerXml);
+
+                    //node = testcaseNode.SelectSingleNode("//node_order");
+                    //MessageBox.Show(node.InnerXml);
+                    //node = testcaseNode.SelectSingleNode("//externalid");
+                    //MessageBox.Show(node.InnerXml);
+
+                    Testcase tc = new Testcase();
+                    tc.node_order = testcaseNode.SelectSingleNode("//node_order");
+                    tc.externalid = testcaseNode.SelectSingleNode("//externalid");
+                    tc.version = testcaseNode.SelectSingleNode("//version");
+                    tc.summary = testcaseNode.SelectSingleNode("//summary");
+                    tc.preconditions = testcaseNode.SelectSingleNode("//preconditions");
+                    tc.execution_type = testcaseNode.SelectSingleNode("//execution_type");
+                    tc.importance = testcaseNode.SelectSingleNode("//importance");
+
+                    XmlNodeList stepList = testcaseNode.SelectNodes("./steps/step");
+                    foreach (XmlNode stepNode in stepList)
+                    {
+                        StepAction step = new StepAction();
+                        step.step_number = stepNode.SelectSingleNode("./step_number");
+                        step.actions = stepNode.SelectSingleNode("./actions");
+                        step.expectedresults = stepNode.SelectSingleNode("./expectedresults");
+                        step.execution_type = stepNode.SelectSingleNode("./execution_type");
+                        tc.stepActionList.Add(step);
+                    }
+
+                    XmlNodeList keywordList = testcaseNode.SelectNodes("./keywords/keyword");
+                    foreach (XmlNode keywordNode in keywordList)
+                    {
+                        Keyword keyword = new Keyword();
+                        keyword.name = keywordNode.Attributes["name"].Value;
+                        keyword.notes = keywordNode.SelectSingleNode("./notes");
+                        tc.keywordList.Add(keyword);
+                    }
+
+                    //testing individual test case step actions
+                    //
+                    //for (int i = 0; i < tc.stepActionList.Count; i++)
+                    //{
+                    //    MessageBox.Show(tc.stepActionList[i].actions.InnerText);
+                    //}
+                    //MessageBox.Show("end of test case");
+                    //
+                    //end of test
+
+                    //testing individual test case step actions
+                    //
+                    //for (int i = 0; i < tc.keywordList.Count; i++)
+                    //{
+                    //    MessageBox.Show(tc.keywordList[i].name);
+                    //}
+                    //MessageBox.Show("end of test case");
+                    //
+                    //end of test
                 }
             }
         }
