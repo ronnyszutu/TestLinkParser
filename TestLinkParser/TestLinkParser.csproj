@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Keyword.cs" />
+    <Compile Include="StepAction.cs" />
+    <Compile Include="Testcase.cs" />
     <Compile Include="TestLinkParser.cs">
       <SubType>Form</SubType>
     </Compile>

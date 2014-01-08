@@ -7,7 +7,9 @@ using System.Xml;
 namespace TestLinkParser
 {
     class Testcase
-        XmlNode node_order, externalid, version, summary, preconditions, execution_type, importance;
     {
+        public XmlNode node_order, externalid, version, summary, preconditions, execution_type, importance;
+        public List<Keyword> keywordList = new List<Keyword>();
+        public List<StepAction> stepActionList = new List<StepAction>();
     }
 }
